@@ -310,7 +310,7 @@ WriteResult({ "nRemoved" : 3 })
 ### Code along: Delete People and Doctors
 
 Let's remove all the people with a specific `bornOn` date and doctors with
-`Internal Medicine` as their specialty
+`Internal medicine` as their specialty
 
 ### Lab: Delete Ingredients
 
