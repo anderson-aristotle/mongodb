@@ -301,10 +301,10 @@ We'll remove a few books from the data-store. There are methods for removing
 one and multiple entries.
 
 ```bash
-> db.books.deleteOne({author:"Mongo Expert"})
-WriteResult({ "nRemoved" : 1 })
-> db.books.deleteOne({author:"Mongo Expert"})
-WriteResult({ "nRemoved" : 3 })
+> db.books.deleteOne({author: "John Irving"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.books.deleteMany({author: "John Irving"})
+{ "acknowledged" : true, "deletedCount" : 2 }
 ```
 
 ### Code along: Delete People and Doctors
