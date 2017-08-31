@@ -183,11 +183,11 @@ specify the JSON as a JavaScript object.
 ### Code along: Insert Doctors
 
 Together we'll add a few doctors then we'll bulk load
-`data/doctors.csv`.
+`data/doctors.csv` to the `doctors` collection .
 
 ### Lab: Insert Ingredients
 
-Add an ingedient to the `ingredients` collection using `insert` then bulk load
+Add an ingredient to the `ingredients` collection using `insert` then bulk load
 `data/ingredients.csv`.
 
 ---
