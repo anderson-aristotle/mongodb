@@ -203,7 +203,7 @@ Add an ingredient to the `ingredients` collection using `insert` then bulk load
 
 ### Demo: Read Books
 
-Let's see some what we can learn about the books in the database.
+Let's see some of what we can learn about the books in the database.
 
 ```bash
 > db.books.find({author: "Ernest Hemingway"}).pretty()
@@ -236,7 +236,7 @@ Let's see some what we can learn about the books in the database.
 }
 ```
 
-**Note:**   When using the REPL the `.pretty()` method can be quite helpful.
+**Note:**   When using the REPL, the `.pretty()` method can be quite helpful.
 
 What do we see?
 
@@ -249,11 +249,11 @@ What do we see?
 
 Together we'll build a query to our people collections table. Let's see if we
 can find all people born after a date. How about the number of people under
-5 feet tall, and doctors who perform surgery?
+5 feet tall? What about all the doctors who perform surgery?
 
 ### Lab: Read Ingredients
 
-Write a query to get all the ingredients of unit of `tbsp`.
+Write a query to get all the ingredients with a unit of `tbsp`.
 
 ---
 
@@ -298,7 +298,7 @@ and `db.dropDatabase();` drops the current database.
 ### Demo: Delete Books
 
 We'll remove a few books from the data-store. There are methods for removing
-one and multiple entries.
+one entry and multiple entries.
 
 ```bash
 > db.books.deleteOne({author: "John Irving"})
@@ -314,7 +314,7 @@ Let's remove all the people with a specific `bornOn` date and doctors with
 
 ### Lab: Delete Ingredients
 
-Remove Ingredients that have `ml` as their unit of measure.
+Remove ingredients that have `ml` as their unit of measure.
 
 ## Additional resources
 
