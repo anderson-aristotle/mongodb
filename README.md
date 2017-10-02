@@ -20,7 +20,7 @@ Basic JavaScript.
 
 Required readings:
 
--   [SQL noSQL Disussion](https://github.com/ga-wdi-boston/sql-nosql-discussion)
+-   [SQL noSQL Disussion](https://git.generalassemb.ly/ga-wdi-boston/sql-nosql-discussion)
 -   [Mongo DB Is Web Scale](https://www.youtube.com/watch?v=b2F-DItXtZs)
 -   [Getting Started with MongoDB (MongoDB Shell Edition)](https://docs.mongodb.org/getting-started/shell/)
 
