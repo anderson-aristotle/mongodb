@@ -31,7 +31,7 @@ We'll run `brew install mongodb` then to make sure we're up to date run
 
 ### On Ubuntu
 
-Run `sudo apt-get install mongodb`
+Follow the instructions [here](https://docs.mongodb.com/v3.2/tutorial/install-mongodb-on-ubuntu/) carefully.
 
 ## Introduction
 
