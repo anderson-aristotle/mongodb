@@ -309,7 +309,7 @@ one entry and multiple entries.
 
 ### Code along: Delete People and Doctors
 
-Let's remove all the people with a specific `bornOn` date and doctors with
+Let's remove all the people with a specific `born_on` date and doctors with
 `Internal medicine` as their specialty
 
 ### Lab: Delete Ingredients
