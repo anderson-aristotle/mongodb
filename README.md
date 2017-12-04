@@ -63,8 +63,13 @@ commands interactively and from scripts.
 
 First let's fire up our server:
 
+Mac OS only:
 ```bash
 brew services start mongodb
+```
+Ubuntu Only:
+```bash
+sudo service mongod start
 ```
 
 ```bash
