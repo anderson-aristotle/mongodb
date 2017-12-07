@@ -31,7 +31,7 @@ We'll run `brew install mongodb` then to make sure we're up to date run
 
 ### On Ubuntu
 
-Run `sudo apt-get install mongodb`
+Follow the instructions [here](https://docs.mongodb.com/v3.2/tutorial/install-mongodb-on-ubuntu/) carefully.
 
 ## Introduction
 
@@ -63,8 +63,13 @@ commands interactively and from scripts.
 
 First let's fire up our server:
 
+Mac OS only:
 ```bash
 brew services start mongodb
+```
+Ubuntu Only:
+```bash
+sudo service mongod start
 ```
 
 ```bash
@@ -98,9 +103,14 @@ local  0.078GB
 >
 ```
 
-## Create a Collection
+## Importing Data
 
-### Code Along
+-   [Importing data](https://docs.mongodb.org/getting-started/shell/import-data/) - overview of MongoDB's `mongoimport` command line utility.
+-   [mongoimport](https://docs.mongodb.org/manual/reference/program/mongoimport/) - detailed documentation of MongoDB's `mongoimport` command line utility.
+
+To help us practice interacting with a Mongo database, we'll want some data to
+work with. MongoDB's `mongoimport` command will let us load bulk data from a `JSON` or
+`CSV` file.
 
 Our first collection will be called `people`. It has no entries.
 
@@ -114,16 +124,6 @@ This is a common pattern in MongoDB: you can refer to things that don't yet
 exist, and it will cooperate.  MongoDB won't create them until you give it
 something to remember.
 
-## Adding a document to a collection
-
--   [Inserting data](https://docs.mongodb.org/getting-started/shell/insert/) - Overview of adding documents to a collection.
--   [db.collection.insert()](https://docs.mongodb.org/manual/reference/method/db.collection.insert/) - detailed documentation of MongoDB's `insert` collection method.
--   [Importing data](https://docs.mongodb.org/getting-started/shell/import-data/) - overview of MongoDB's `mongoimport` command line utility.
--   [mongoimport](https://docs.mongodb.org/manual/reference/program/mongoimport/) - detailed documentation of MongoDB's `mongoimport` command line utility.
-
-MongoDB's `mongoimport` command will let us load bulk data from a `JSON` or
-`CSV` file.
-
 ### Demo: Bulk Load Books
 
 Watch as I load data in bulk from `data/books.csv`.  We'll save the
@@ -133,7 +133,7 @@ command in `scripts/import/books.sh`.
 mongoimport --db=mongo-crud --collection=books --type=csv --headerline --file=data/books.csv
 ```
 
-#### Code along: Bulk Load People
+### Code along: Bulk Load People
 
 First we'll load data in bulk from `data/people.csv`.  We'll save the
 command in `scripts/import/people.sh`.
@@ -165,30 +165,9 @@ system.indexes
 2438
 ```
 
-Next we'll use the `insert` collection method to add a few more people.  We'll
-save our invocations in `insert/people.js`.  We'll execute that script using the
-`mongo` `load` method.  Let's give these people a middle_initial or a nick_name.
-Note that the attributes we choose for these people need not match those from
-the data we loaded in bulk.
+### Lab: Import Ingredients and Doctors
 
-```bash
-> load('scripts/insert/people.js');
-```
-
-MongoDB uses JSON natively (technically
-[BSON](https://docs.mongodb.org/manual/reference/glossary/#term-bson)), which
-makes it well suited for JavaScript applications.  Conveniently, MongoDB lets us
-specify the JSON as a JavaScript object.
-
-### Code along: Insert Doctors
-
-Together we'll add a few doctors then we'll bulk load
-`data/doctors.csv` to the `doctors` collection .
-
-### Lab: Insert Ingredients
-
-Add an ingredient to the `ingredients` collection using `insert` then bulk load
-`data/ingredients.csv`.
+On your own, use `mongoimport` to bulk load from `data/doctors.csv` and `data/ingredients.csv`. Save the commands as `.sh` files and run them from the terminal (not the Mongo shell!).
 
 ---
 
@@ -257,6 +236,37 @@ Write a query to get all the ingredients with a unit of `tbsp`.
 
 ---
 
+## Deleting documents
+
+-   [Removing Data](https://docs.mongodb.org/getting-started/shell/remove/) - Overview of removing documents from a collection.
+-   [remove](https://docs.mongodb.org/manual/reference/method/db.collection.remove/) - detailed documentation of MongoDB's `remove` collection method.
+
+If we want to clean up, `db.<collection>.drop();` drops the specified collection
+and `db.dropDatabase();` drops the current database.
+
+### Demo: Delete Books
+
+We'll remove a few books from the data-store. There are methods for removing
+one entry and multiple entries.
+
+```bash
+> db.books.deleteOne({author: "John Irving"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.books.deleteMany({author: "John Irving"})
+{ "acknowledged" : true, "deletedCount" : 2 }
+```
+
+### Code along: Delete People and Doctors
+
+Let's remove all the people with a specific `born_on` date and doctors with
+`Internal medicine` as their specialty
+
+### Lab: Delete Ingredients
+
+Remove ingredients that have `ml` as their unit of measure.
+
+---
+
 ## Changing the data in documents in a collection
 
 -   [Updating Data](https://docs.mongodb.org/getting-started/shell/update/) - overview of changing documents
@@ -287,34 +297,33 @@ Update a couple of ingredients' units.
 
 ---
 
-## Deleting documents
+## Adding a document to a collection
 
--   [Removing Data](https://docs.mongodb.org/getting-started/shell/remove/) - Overview of removing documents from a collection.
--   [remove](https://docs.mongodb.org/manual/reference/method/db.collection.remove/) - detailed documentation of MongoDB's `remove` collection method.
+-   [Inserting data](https://docs.mongodb.org/getting-started/shell/insert/) - Overview of adding documents to a collection.
+-   [db.collection.insert()](https://docs.mongodb.org/manual/reference/method/db.collection.insert/) - detailed documentation of MongoDB's `insert` collection method.
 
-If we want to clean up, `db.<collection>.drop();` drops the specified collection
-and `db.dropDatabase();` drops the current database.
-
-### Demo: Delete Books
-
-We'll remove a few books from the data-store. There are methods for removing
-one entry and multiple entries.
+Next we'll use the `insert` collection method to add a few more people.  We'll
+save our invocations in `insert/people.js`.  We'll execute that script using the
+`mongo` `load` method.  Let's give these people a middle_initial or a nick_name.
+Note that the attributes we choose for these people need not match those from
+the data we loaded in bulk.
 
 ```bash
-> db.books.deleteOne({author: "John Irving"})
-{ "acknowledged" : true, "deletedCount" : 1 }
-> db.books.deleteMany({author: "John Irving"})
-{ "acknowledged" : true, "deletedCount" : 2 }
+> load('scripts/insert/people.js');
 ```
 
-### Code along: Delete People and Doctors
+MongoDB uses JSON natively (technically
+[BSON](https://docs.mongodb.org/manual/reference/glossary/#term-bson)), which
+makes it well suited for JavaScript applications.  Conveniently, MongoDB lets us
+specify the JSON as a JavaScript object.
 
-Let's remove all the people with a specific `bornOn` date and doctors with
-`Internal medicine` as their specialty
+### Code along: Insert Doctors
 
-### Lab: Delete Ingredients
+Together we'll add a few doctors.
 
-Remove ingredients that have `ml` as their unit of measure.
+### Lab: Insert Ingredients
+
+Add a few ingredients to the `ingredients` collection using `insert`.
 
 ## Additional resources
 
