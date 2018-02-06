@@ -339,6 +339,8 @@ Add a few ingredients to the `ingredients` collection using `insert`.
 ## Additional resources
 
 -   [BSON Types](https://docs.mongodb.org/manual/reference/bson-types/)
+- [Data Model Examples and Patterns](https://docs.mongodb.com/manual/applications/data-models/)
+- [Diagrams and Data Explorer for MongoDB](https://www.dbschema.com/diagrams-and-data-explorer-for-mongodb.html)
 
 ## [License](LICENSE)
 
