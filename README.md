@@ -240,6 +240,8 @@ Write a query to get all the ingredients with a unit of `tbsp`.
 
 -   [Removing Data](https://docs.mongodb.org/getting-started/shell/remove/) - Overview of removing documents from a collection.
 -   [remove](https://docs.mongodb.org/manual/reference/method/db.collection.remove/) - detailed documentation of MongoDB's `remove` collection method.
+- [deleteOne](https://docs.mongodb.com/manual/reference/method/db.collection.deleteOne/) - detailed documentation of MongoDB's `deleteOne` collection method.
+- [deleteMany](https://docs.mongodb.com/manual/reference/method/db.collection.deleteMany/) - detailed documentation of MongoDB's `deleteMany` collection method.
 
 If we want to clean up, `db.<collection>.drop();` drops the specified collection
 and `db.dropDatabase();` drops the current database.
@@ -297,6 +299,15 @@ Update a couple of ingredients' units.
 
 ---
 
+## Deleting documents
+
+-   [Removing Data](https://docs.mongodb.org/getting-started/shell/remove/) - Overview of removing documents from a collection.
+-   [remove](https://docs.mongodb.org/manual/reference/method/db.collection.remove/) - detailed documentation of MongoDB's `remove` collection method.
+- [deleteOne](https://docs.mongodb.com/manual/reference/method/db.collection.deleteOne/) - detailed documentation of MongoDB's `deleteOne` collection method.
+- [deleteMany](https://docs.mongodb.com/manual/reference/method/db.collection.deleteMany/) - detailed documentation of MongoDB's `deleteMany` collection method.
+
+If we want to clean up, `db.<collection>.drop();` drops the specified collection
+and `db.dropDatabase();` drops the current database.
 ## Adding a document to a collection
 
 -   [Inserting data](https://docs.mongodb.org/getting-started/shell/insert/) - Overview of adding documents to a collection.
@@ -328,6 +339,8 @@ Add a few ingredients to the `ingredients` collection using `insert`.
 ## Additional resources
 
 -   [BSON Types](https://docs.mongodb.org/manual/reference/bson-types/)
+- [Data Model Examples and Patterns](https://docs.mongodb.com/manual/applications/data-models/)
+- [Diagrams and Data Explorer for MongoDB](https://www.dbschema.com/diagrams-and-data-explorer-for-mongodb.html)
 
 ## [License](LICENSE)
 
