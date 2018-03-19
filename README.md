@@ -180,6 +180,11 @@ On your own, use `mongoimport` to bulk load from `data/doctors.csv` and `data/in
 -   [Data aggregation](https://docs.mongodb.org/getting-started/shell/aggregation/) - Overview of summarizing documents.
 -   [aggregate](https://docs.mongodb.org/manual/reference/method/db.collection.aggregate/) - Detailed documentation on the `aggregate` collection method.
 
+MongoDB uses JSON natively (technically
+[BSON](https://docs.mongodb.org/manual/reference/glossary/#term-bson)), which
+makes it well suited for JavaScript applications.  Conveniently, MongoDB lets us
+specify the JSON as a JavaScript object.
+
 ### Demo: Read Books
 
 Let's see some of what we can learn about the books in the database.
@@ -322,11 +327,6 @@ the data we loaded in bulk.
 ```bash
 > load('scripts/insert/people.js');
 ```
-
-MongoDB uses JSON natively (technically
-[BSON](https://docs.mongodb.org/manual/reference/glossary/#term-bson)), which
-makes it well suited for JavaScript applications.  Conveniently, MongoDB lets us
-specify the JSON as a JavaScript object.
 
 ### Code along: Insert Doctors
 
