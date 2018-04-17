@@ -2,18 +2,6 @@
 
 # An Introduction to MongoDB
 
-## Instructions
-
-Fork and clone this repository.
-
-## Objectives
-
-By the end of the lesson, students should be able to:
-
--   Use the MongoDB shell to interact with MongoDB databases and collections
--   Create, Read, Update, and Delete documents in MongoDB collections using the
-    MongoDB shell.
-
 ## Prerequisites
 
 Basic JavaScript.
@@ -23,6 +11,22 @@ Required readings:
 -   [SQL noSQL Disussion](https://git.generalassemb.ly/ga-wdi-boston/sql-nosql-discussion)
 -   [Mongo DB Is Web Scale](https://www.youtube.com/watch?v=b2F-DItXtZs)
 -   [Getting Started with MongoDB (MongoDB Shell Edition)](https://docs.mongodb.org/getting-started/shell/)
+
+## Objectives
+
+By the end of this, developers should be able to:
+
+-   Use the MongoDB shell to interact with MongoDB databases and collections
+-   Create, Read, Update, and Delete documents in MongoDB collections using the
+    MongoDB shell.
+
+## Preparation
+
+1.  Fork and clone this repository.
+  [FAQ](https://git.generalassemb.ly/ga-wdi-boston/meta/wiki/ForkAndClone)
+1.  Create a new branch, `training`, for your work.
+1.  Checkout to the `training` branch.
+1.  Install dependencies with `npm install`.
 
 ## Installation
 
