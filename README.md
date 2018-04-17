@@ -8,25 +8,25 @@ Basic JavaScript.
 
 Required readings:
 
--   [SQL noSQL Disussion](https://git.generalassemb.ly/ga-wdi-boston/sql-nosql-discussion)
--   [Mongo DB Is Web Scale](https://www.youtube.com/watch?v=b2F-DItXtZs)
--   [Getting Started with MongoDB (MongoDB Shell Edition)](https://docs.mongodb.org/getting-started/shell/)
+- [SQL NoSQL Discussion](https://git.generalassemb.ly/ga-wdi-boston/sql-nosql-discussion)
+- [MongoDB Is Web Scale](https://www.youtube.com/watch?v=b2F-DItXtZs)
+- [Getting Started with MongoDB (MongoDB Shell Edition)](https://docs.mongodb.org/getting-started/shell/)
 
 ## Objectives
 
 By the end of this, developers should be able to:
 
--   Use the MongoDB shell to interact with MongoDB databases and collections
--   Create, Read, Update, and Delete documents in MongoDB collections using the
+- Use the MongoDB shell to interact with MongoDB databases and collections
+- Create, Read, Update, and Delete documents in MongoDB collections using the
     MongoDB shell.
 
 ## Preparation
 
-1.  Fork and clone this repository.
+1. Fork and clone this repository.
   [FAQ](https://git.generalassemb.ly/ga-wdi-boston/meta/wiki/ForkAndClone)
-1.  Create a new branch, `training`, for your work.
-1.  Checkout to the `training` branch.
-1.  Install dependencies with `npm install`.
+1. Create a new branch, `training`, for your work.
+1. Checkout to the `training` branch.
+1. Install dependencies with `npm install`.
 
 ## Installation
 
@@ -35,14 +35,15 @@ We'll run `brew install mongodb` then to make sure we're up to date run
 
 ### On Ubuntu
 
-Follow the instructions [here](https://docs.mongodb.com/v3.2/tutorial/install-mongodb-on-ubuntu/) carefully.
+Follow the instructions [here](https://docs.mongodb.com/v3.2/tutorial/install-mongodb-on-ubuntu/)
+carefully.
 
 ## Introduction
 
 Relational databases are good at modeling data that fits into tables.  What do
 you use if your data isn't that structured?
 
-Perhaps a [noSQL](https://en.wikipedia.org/wiki/NoSQL) data-store.
+Perhaps a [NoSQL](https://en.wikipedia.org/wiki/NoSQL) data-store.
 
 MongoDB is a schema-less document-store that organizes documents in collections.
 What does this mean?
@@ -68,10 +69,13 @@ commands interactively and from scripts.
 First let's fire up our server:
 
 Mac OS only:
+
 ```bash
 brew services start mongodb
 ```
+
 Ubuntu Only:
+
 ```bash
 sudo service mongod start
 ```
@@ -109,12 +113,14 @@ local  0.078GB
 
 ## Importing Data
 
--   [Importing data](https://docs.mongodb.org/getting-started/shell/import-data/) - overview of MongoDB's `mongoimport` command line utility.
--   [mongoimport](https://docs.mongodb.org/manual/reference/program/mongoimport/) - detailed documentation of MongoDB's `mongoimport` command line utility.
+- [Importing data](https://docs.mongodb.org/getting-started/shell/import-data/)
+  - overview of MongoDB's `mongoimport` command line utility.
+- [mongoimport](https://docs.mongodb.org/manual/reference/program/mongoimport/)
+  - detailed documentation of MongoDB's `mongoimport` command line utility.
 
 To help us practice interacting with a Mongo database, we'll want some data to
-work with. MongoDB's `mongoimport` command will let us load bulk data from a `JSON` or
-`CSV` file.
+work with. MongoDB's `mongoimport` command will let us load bulk data from a
+`JSON` or `CSV` file.
 
 Our first collection will be called `people`. It has no entries.
 
@@ -150,7 +156,7 @@ If we want to clear the collection before the import, we pass the `--drop` flag.
 
 Run this script by typing:
 
- ``` sh path_to_file.sh ```
+ ```sh path_to_file.sh```
 
 Now that we've inserted data into it, the `mongo-crud` database and the `people`
 collection both exist.
@@ -171,18 +177,26 @@ system.indexes
 
 ### Lab: Import Ingredients and Doctors
 
-On your own, use `mongoimport` to bulk load from `data/doctors.csv` and `data/ingredients.csv`. Save the commands as `.sh` files and run them from the terminal (not the Mongo shell!).
+On your own, use `mongoimport` to bulk load from `data/doctors.csv` and
+`data/ingredients.csv`. Save the commands as `.sh` files and run them from the
+terminal (not the Mongo shell!).
 
 ---
 
 ## Retrieving documents from a collection
 
--   [Querying](https://docs.mongodb.org/getting-started/shell/query/) - Overview of retrieving data from MongoDB.
--   [Queries](https://docs.mongodb.org/manual/reference/mongo-shell/#queries) - More detailed overview on retrieving data.
--   [find](https://docs.mongodb.org/manual/reference/method/db.collection.find/) - Detailed documentation on the `find` collection method.
--   [findOne](https://docs.mongodb.org/manual/reference/method/db.collection.findOne/) - Detailed documentation on the `findOne` collection method.
--   [Data aggregation](https://docs.mongodb.org/getting-started/shell/aggregation/) - Overview of summarizing documents.
--   [aggregate](https://docs.mongodb.org/manual/reference/method/db.collection.aggregate/) - Detailed documentation on the `aggregate` collection method.
+- [Querying](https://docs.mongodb.org/getting-started/shell/query/)
+  - Overview of retrieving data from MongoDB.
+- [Queries](https://docs.mongodb.org/manual/reference/mongo-shell/#queries)
+  - More detailed overview on retrieving data.
+- [find](https://docs.mongodb.org/manual/reference/method/db.collection.find/)
+  - Detailed documentation on the `find` collection method.
+- [findOne](https://docs.mongodb.org/manual/reference/method/db.collection.findOne/)
+  - Detailed documentation on the `findOne` collection method.
+- [Data aggregation](https://docs.mongodb.org/getting-started/shell/aggregation/)
+  - Overview of summarizing documents.
+- [aggregate](https://docs.mongodb.org/manual/reference/method/db.collection.aggregate/)
+  - Detailed documentation on the `aggregate` collection method.
 
 MongoDB uses JSON natively (technically
 [BSON](https://docs.mongodb.org/manual/reference/glossary/#term-bson)), which
@@ -196,31 +210,31 @@ Let's see some of what we can learn about the books in the database.
 ```bash
 > db.books.find({author: "Ernest Hemingway"}).pretty()
 {
-	"_id" : ObjectId("583ee3f3e6ae0faa5547068e"),
-	"title" : "A Farewell to Arms",
-	"author" : "Ernest Hemingway",
-	"published_on" : "1986-02-15"
+ "_id" : ObjectId("583ee3f3e6ae0faa5547068e"),
+ "title" : "A Farewell to Arms",
+ "author" : "Ernest Hemingway",
+ "published_on" : "1986-02-15"
 }
 {
-	"_id" : ObjectId("583ee3f3e6ae0faa5547071a"),
-	"title" : "The Sun Also Rises",
-	"author" : "Ernest Hemingway",
-	"published_on" : "2002-10-20"
+ "_id" : ObjectId("583ee3f3e6ae0faa5547071a"),
+ "title" : "The Sun Also Rises",
+ "author" : "Ernest Hemingway",
+ "published_on" : "2002-10-20"
 }
 > db.books.find({published_on: /20/}).count()
 36
 > db.books.find({published_on: /20/}).sort({title: -1}).limit(2).pretty()
 {
-	"_id" : ObjectId("583ee3f3e6ae0faa5547072f"),
-	"title" : "Wide Sargasso Sea",
-	"author" : "Jean Rhys",
-	"published_on" : "2011-01-14"
+ "_id" : ObjectId("583ee3f3e6ae0faa5547072f"),
+ "title" : "Wide Sargasso Sea",
+ "author" : "Jean Rhys",
+ "published_on" : "2011-01-14"
 }
 {
-	"_id" : ObjectId("583ee3f3e6ae0faa55470725"),
-	"title" : "Trader",
-	"author" : "Charles de Lint",
-	"published_on" : "2003-06-23"
+ "_id" : ObjectId("583ee3f3e6ae0faa55470725"),
+ "title" : "Trader",
+ "author" : "Charles de Lint",
+ "published_on" : "2003-06-23"
 }
 ```
 
@@ -228,10 +242,8 @@ Let's see some of what we can learn about the books in the database.
 
 What do we see?
 
--   MongoDB gave each of our documents a unique ID field, called _id.
--   MongoDB doesn't care that some documents have fewer or more attributes.
-
-
+- MongoDB gave each of our documents a unique ID field, called _id.
+- MongoDB doesn't care that some documents have fewer or more attributes.
 
 ### Code along: Read People and Doctors
 
@@ -247,10 +259,14 @@ Write a query to get all the ingredients with a unit of `tbsp`.
 
 ## Deleting documents
 
--   [Removing Data](https://docs.mongodb.org/getting-started/shell/remove/) - Overview of removing documents from a collection.
--   [remove](https://docs.mongodb.org/manual/reference/method/db.collection.remove/) - detailed documentation of MongoDB's `remove` collection method.
-- [deleteOne](https://docs.mongodb.com/manual/reference/method/db.collection.deleteOne/) - detailed documentation of MongoDB's `deleteOne` collection method.
-- [deleteMany](https://docs.mongodb.com/manual/reference/method/db.collection.deleteMany/) - detailed documentation of MongoDB's `deleteMany` collection method.
+- [Removing Data](https://docs.mongodb.org/getting-started/shell/remove/)
+  - Overview of removing documents from a collection.
+- [remove](https://docs.mongodb.org/manual/reference/method/db.collection.remove/)
+  - detailed documentation of MongoDB's `remove` collection method.
+- [deleteOne](https://docs.mongodb.com/manual/reference/method/db.collection.deleteOne/)
+  - detailed documentation of MongoDB's `deleteOne` collection method.
+- [deleteMany](https://docs.mongodb.com/manual/reference/method/db.collection.deleteMany/)
+  - detailed documentation of MongoDB's `deleteMany` collection method.
 
 If we want to clean up, `db.<collection>.drop();` drops the specified collection
 and `db.dropDatabase();` drops the current database.
@@ -280,9 +296,12 @@ Remove ingredients that have `ml` as their unit of measure.
 
 ## Changing the data in documents in a collection
 
--   [Updating Data](https://docs.mongodb.org/getting-started/shell/update/) - overview of changing documents
--   [update](https://docs.mongodb.org/manual/reference/method/db.collection.update/) - detailed documentation of MongoDB's `update` collection method.
--   [Update Operators](https://docs.mongodb.org/manual/reference/operator/update/) - The different modifications we can make during an update.
+- [Updating Data](https://docs.mongodb.org/getting-started/shell/update/)
+  - overview of changing documents
+- [update](https://docs.mongodb.org/manual/reference/method/db.collection.update/)
+  - detailed documentation of MongoDB's `update` collection method.
+- [Update Operators](https://docs.mongodb.org/manual/reference/operator/update/)
+  - The different modifications we can make during an update.
 
 ### Demo: Update Books
 
@@ -310,17 +329,24 @@ Update a couple of ingredients' units.
 
 ## Deleting documents
 
--   [Removing Data](https://docs.mongodb.org/getting-started/shell/remove/) - Overview of removing documents from a collection.
--   [remove](https://docs.mongodb.org/manual/reference/method/db.collection.remove/) - detailed documentation of MongoDB's `remove` collection method.
-- [deleteOne](https://docs.mongodb.com/manual/reference/method/db.collection.deleteOne/) - detailed documentation of MongoDB's `deleteOne` collection method.
-- [deleteMany](https://docs.mongodb.com/manual/reference/method/db.collection.deleteMany/) - detailed documentation of MongoDB's `deleteMany` collection method.
+- [Removing Data](https://docs.mongodb.org/getting-started/shell/remove/)
+  - Overview of removing documents from a collection.
+- [remove](https://docs.mongodb.org/manual/reference/method/db.collection.remove/)
+  - detailed documentation of MongoDB's `remove` collection method.
+- [deleteOne](https://docs.mongodb.com/manual/reference/method/db.collection.deleteOne/)
+  - detailed documentation of MongoDB's `deleteOne` collection method.
+- [deleteMany](https://docs.mongodb.com/manual/reference/method/db.collection.deleteMany/)
+  - detailed documentation of MongoDB's `deleteMany` collection method.
 
 If we want to clean up, `db.<collection>.drop();` drops the specified collection
 and `db.dropDatabase();` drops the current database.
+
 ## Adding a document to a collection
 
--   [Inserting data](https://docs.mongodb.org/getting-started/shell/insert/) - Overview of adding documents to a collection.
--   [db.collection.insert()](https://docs.mongodb.org/manual/reference/method/db.collection.insert/) - detailed documentation of MongoDB's `insert` collection method.
+- [Inserting data](https://docs.mongodb.org/getting-started/shell/insert/)
+  - Overview of adding documents to a collection.
+- [db.collection.insert()](https://docs.mongodb.org/manual/reference/method/db.collection.insert/)
+  - detailed documentation of MongoDB's `insert` collection method.
 
 Next we'll use the `insert` collection method to add a few more people.  We'll
 save our invocations in `insert/people.js`.  We'll execute that script using the
@@ -342,12 +368,12 @@ Add a few ingredients to the `ingredients` collection using `insert`.
 
 ## Additional resources
 
--   [BSON Types](https://docs.mongodb.org/manual/reference/bson-types/)
+- [BSON Types](https://docs.mongodb.org/manual/reference/bson-types/)
 - [Data Model Examples and Patterns](https://docs.mongodb.com/manual/applications/data-models/)
 - [Diagrams and Data Explorer for MongoDB](https://www.dbschema.com/diagrams-and-data-explorer-for-mongodb.html)
 
 ## [License](LICENSE)
 
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
+1. All content is licensed under a CC­BY­NC­SA 4.0 license.
+1. All software code is licensed under GNU GPLv3. For commercial use or
     alternative licensing, please contact legal@ga.co.
