@@ -4,13 +4,9 @@
 
 ## Prerequisites
 
-Basic JavaScript.
-
-Required readings:
-
+- Basic JavaScript
 - [SQL NoSQL Discussion](https://git.generalassemb.ly/ga-wdi-boston/sql-nosql-discussion)
-- [MongoDB Is Web Scale](https://www.youtube.com/watch?v=b2F-DItXtZs)
-- [Getting Started with MongoDB (MongoDB Shell Edition)](https://docs.mongodb.org/getting-started/shell/)
+- [MongoDB Study](https://git.generalassemb.ly/ga-wdi-boston/mongodb-study)
 
 ## Objectives
 
