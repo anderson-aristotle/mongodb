@@ -45,9 +45,9 @@ What does this mean?
 
 ---
 
-## Create a database
+## Create a Database
 
-### Code along
+### Code Along
 
 We'll use `mongo-crud` as the database to hold our tables and
 [mongo](https://docs.mongodb.org/manual/reference/program/mongo/) to interact
@@ -68,10 +68,20 @@ First let's fire up our server:
   sudo service mongod start
   ```
 
+The command to enter into the MongoDB shell is `mongo <name-of-database>`:
+
 ```bash
 $ mongo mongo-crud
-MongoDB shell version: 3.2.10
+MongoDB shell version v3.x.x
 connecting to: mongo-crud
+>
+```
+
+The command to display the current database in use is `db`:
+
+```bash
+> db
+mongo-crud
 >
 ```
 
@@ -86,16 +96,21 @@ local  0.000GB # or local  0.078GB
 Unlike PostgreSQL, MongoDB lets us select a database that hasn't been created.
 When we add a collection, the database will be created.
 
-If we didn't specify the database on the command line we can connect to a
-database with `use <database name>`:
+For instance, if we didn't specify the database on the command line, we can
+connect to a database with `use <database-name>`:
 
 ```bash
-MongoDB shell version: 3.2.10
+$ mongo
+MongoDB shell version v3.x.x
 connecting to: test
+> db
+test
 > use mongo-crud
 switched to db mongo-crud
+> db
+mongo-crud
 > show databases
-local  0.078GB
+local  0.000GB # or local  0.078GB
 >
 ```
 
