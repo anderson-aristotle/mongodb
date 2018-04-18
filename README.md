@@ -265,16 +265,16 @@ Write a query to get all the ingredients with a unit of `tbsp`.
 
 ---
 
-## Deleting documents
+## Deleting Documents
 
 - [Removing Data](https://docs.mongodb.org/getting-started/shell/remove/)
   - Overview of removing documents from a collection.
-- [remove](https://docs.mongodb.org/manual/reference/method/db.collection.remove/)
-  - detailed documentation of MongoDB's `remove` collection method.
-- [deleteOne](https://docs.mongodb.com/manual/reference/method/db.collection.deleteOne/)
-  - detailed documentation of MongoDB's `deleteOne` collection method.
-- [deleteMany](https://docs.mongodb.com/manual/reference/method/db.collection.deleteMany/)
-  - detailed documentation of MongoDB's `deleteMany` collection method.
+- [`remove`](https://docs.mongodb.org/manual/reference/method/db.collection.remove/)
+  - Detailed documentation of MongoDB's `remove` collection method.
+- [`deleteOne`](https://docs.mongodb.com/manual/reference/method/db.collection.deleteOne/)
+  - Detailed documentation of MongoDB's `deleteOne` collection method.
+- [`deleteMany`](https://docs.mongodb.com/manual/reference/method/db.collection.deleteMany/)
+  - Detailed documentation of MongoDB's `deleteMany` collection method.
 
 If we want to clean up, `db.<collection>.drop();` drops the specified collection
 and `db.dropDatabase();` drops the current database.
@@ -284,17 +284,19 @@ and `db.dropDatabase();` drops the current database.
 We'll remove a few books from the data-store. There are methods for removing
 one entry and multiple entries.
 
-```bash
+```
 > db.books.deleteOne({author: "John Irving"})
 { "acknowledged" : true, "deletedCount" : 1 }
-> db.books.deleteMany({author: "John Irving"})
+```
+```
+> db.books.deleteMany({author: "Sinclair Lewis"})
 { "acknowledged" : true, "deletedCount" : 2 }
 ```
 
-### Code along: Delete People and Doctors
+### Code Along: Delete People and Doctors
 
 Let's remove all the people with a specific `born_on` date and doctors with
-`Internal medicine` as their specialty
+`Internal medicine` as their specialty.
 
 ### Lab: Delete Ingredients
 
