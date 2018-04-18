@@ -24,16 +24,6 @@ By the end of this, developers should be able to:
 1. Checkout to the `training` branch.
 1. Install dependencies with `npm install`.
 
-## Installation
-
-We'll run `brew install mongodb` then to make sure we're up to date run
-`brew update` then `brew upgrade mongo`.
-
-### On Ubuntu
-
-Follow the instructions [here](https://docs.mongodb.com/v3.2/tutorial/install-mongodb-on-ubuntu/)
-carefully.
-
 ## Introduction
 
 Relational databases are good at modeling data that fits into tables.  What do
