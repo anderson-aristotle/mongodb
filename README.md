@@ -304,12 +304,12 @@ Remove ingredients that have `ml` as their unit of measure.
 
 ---
 
-## Changing the data in documents in a collection
+## Changing the Data in Documents in a Collection
 
 - [Updating Data](https://docs.mongodb.org/getting-started/shell/update/)
-  - overview of changing documents
-- [update](https://docs.mongodb.org/manual/reference/method/db.collection.update/)
-  - detailed documentation of MongoDB's `update` collection method.
+  - Overview of changing documents.
+- [`update`](https://docs.mongodb.org/manual/reference/method/db.collection.update/)
+  - Detailed documentation of MongoDB's `update` collection method.
 - [Update Operators](https://docs.mongodb.org/manual/reference/operator/update/)
   - The different modifications we can make during an update.
 
@@ -321,15 +321,18 @@ some books and give them a correct `published_on` value.
 ```bash
 > db.books.update({title: 1984}, {$set: {published_on: "1949-06-08"}})
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+```
+```bash
 > db.books.update({title: "Slaughterhouse-Five"}, {$set: {published_on: "1969-03-31", book_cover: "brown", pages: 247} })
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 ```
 
 What happens if we run an `update` command without the `$set` option?
 
 ### Code along: Update People and Doctors
 
-Now, let's update some people with a hometown. Let's update some doctors
-specialty.
+Now, let's update some people with a hometown. Let's update some doctors'
+specialties.
 
 ### Lab: Update Ingredients
 
