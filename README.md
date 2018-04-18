@@ -43,6 +43,8 @@ What does this mean?
 | row                          | document         |
 | column                       | field            |
 
+---
+
 ## Create a database
 
 ### Code along
@@ -96,6 +98,8 @@ switched to db mongo-crud
 local  0.078GB
 >
 ```
+
+---
 
 ## Importing Data
 
