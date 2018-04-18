@@ -340,18 +340,18 @@ Update a couple of ingredients' units.
 
 ---
 
-## Adding a document to a collection
+## Adding a Document to a Collection
 
 - [Inserting data](https://docs.mongodb.org/getting-started/shell/insert/)
   - Overview of adding documents to a collection.
-- [db.collection.insert()](https://docs.mongodb.org/manual/reference/method/db.collection.insert/)
-  - detailed documentation of MongoDB's `insert` collection method.
+- [`insert`](https://docs.mongodb.org/manual/reference/method/db.collection.insert/)
+  - Detailed documentation of MongoDB's `insert` collection method.
 
-Next we'll use the `insert` collection method to add a few more people.  We'll
-save our invocations in `insert/people.js`.  We'll execute that script using the
-`mongo` `load` method.  Let's give these people a middle_initial or a nick_name.
-Note that the attributes we choose for these people need not match those from
-the data we loaded in bulk.
+Next, we'll use the `insert` collection method to add a few more people.  We'll
+save our invocations in `scripts/insert/people.js`.  We'll execute that script
+using the `mongo` `load` method.  Let's give these people a middle_initial or a
+nick_name. Note that the attributes we choose for these people need not match
+those from the data we loaded in bulk.
 
 ```bash
 > load('scripts/insert/people.js');
