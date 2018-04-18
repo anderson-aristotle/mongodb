@@ -56,17 +56,17 @@ commands interactively and from scripts.
 
 First let's fire up our server:
 
-Mac OS only:
+- Mac OS only:
 
-```bash
-brew services start mongodb
-```
+  ```bash
+  brew services start mongodb
+  ```
 
-Ubuntu Only:
+- Ubuntu Only:
 
-```bash
-sudo service mongod start
-```
+  ```bash
+  sudo service mongod start
+  ```
 
 ```bash
 $ mongo mongo-crud
