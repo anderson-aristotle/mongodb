@@ -119,9 +119,9 @@ local  0.000GB # or local  0.078GB
 ## Importing Data
 
 - [Importing data](https://docs.mongodb.org/getting-started/shell/import-data/)
-  - overview of MongoDB's `mongoimport` command line utility.
-- [mongoimport](https://docs.mongodb.org/manual/reference/program/mongoimport/)
-  - detailed documentation of MongoDB's `mongoimport` command line utility.
+  - Overview of MongoDB's `mongoimport` command line utility.
+- [`mongoimport`](https://docs.mongodb.org/manual/reference/program/mongoimport/)
+  - Detailed documentation of MongoDB's `mongoimport` command line utility.
 
 To help us practice interacting with a Mongo database, we'll want some data to
 work with. MongoDB's `mongoimport` command will let us load bulk data from a
@@ -148,9 +148,9 @@ command in `scripts/import/books.sh`.
 mongoimport --db=mongo-crud --collection=books --type=csv --headerline --file=data/books.csv
 ```
 
-### Code along: Bulk Load People
+### Code Along: Bulk Load People
 
-First we'll load data in bulk from `data/people.csv`.  We'll save the
+First, we'll load data in bulk from `data/people.csv`.  We'll save the
 command in `scripts/import/people.sh`.
 
 ```bash
@@ -168,14 +168,13 @@ collection both exist.
 
 ```bash
 $ mongo mongo-crud
-MongoDB shell version: 3.2.10
+MongoDB shell version v3.x.x
 connecting to: mongo-crud
 > show dbs
 local       0.078GB
 mongo-crud  0.078GB
 > show collections
 people
-system.indexes
 > db.people.count();
 2438
 ```
