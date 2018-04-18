@@ -187,19 +187,19 @@ terminal (not the Mongo shell!).
 
 ---
 
-## Retrieving documents from a collection
+## Retrieving Documents from a Collection
 
 - [Querying](https://docs.mongodb.org/getting-started/shell/query/)
   - Overview of retrieving data from MongoDB.
 - [Queries](https://docs.mongodb.org/manual/reference/mongo-shell/#queries)
   - More detailed overview on retrieving data.
-- [find](https://docs.mongodb.org/manual/reference/method/db.collection.find/)
+- [`find`](https://docs.mongodb.org/manual/reference/method/db.collection.find/)
   - Detailed documentation on the `find` collection method.
-- [findOne](https://docs.mongodb.org/manual/reference/method/db.collection.findOne/)
+- [`findOne`](https://docs.mongodb.org/manual/reference/method/db.collection.findOne/)
   - Detailed documentation on the `findOne` collection method.
 - [Data aggregation](https://docs.mongodb.org/getting-started/shell/aggregation/)
   - Overview of summarizing documents.
-- [aggregate](https://docs.mongodb.org/manual/reference/method/db.collection.aggregate/)
+- [`aggregate`](https://docs.mongodb.org/manual/reference/method/db.collection.aggregate/)
   - Detailed documentation on the `aggregate` collection method.
 
 MongoDB uses JSON natively (technically
@@ -211,7 +211,7 @@ specify the JSON as a JavaScript object.
 
 Let's see some of what we can learn about the books in the database.
 
-```bash
+```
 > db.books.find({author: "Ernest Hemingway"}).pretty()
 {
  "_id" : ObjectId("583ee3f3e6ae0faa5547068e"),
@@ -225,8 +225,12 @@ Let's see some of what we can learn about the books in the database.
  "author" : "Ernest Hemingway",
  "published_on" : "2002-10-20"
 }
+```
+```
 > db.books.find({published_on: /20/}).count()
 36
+```
+```
 > db.books.find({published_on: /20/}).sort({title: -1}).limit(2).pretty()
 {
  "_id" : ObjectId("583ee3f3e6ae0faa5547072f"),
@@ -249,9 +253,9 @@ What do we see?
 - MongoDB gave each of our documents a unique ID field, called _id.
 - MongoDB doesn't care that some documents have fewer or more attributes.
 
-### Code along: Read People and Doctors
+### Code Along: Read People and Doctors
 
-Together we'll build a query to our people collections table. Let's see if we
+Together, we'll build a query for our people collection. Let's see if we
 can find all people born after a date. How about the number of people under
 5 feet tall? What about all the doctors who perform surgery?
 
