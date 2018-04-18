@@ -12,9 +12,9 @@
 
 By the end of this, developers should be able to:
 
-- Use the MongoDB shell to interact with MongoDB databases and collections
+- Interact with MongoDB databases and collections using the MongoDB shell.
 - Create, Read, Update, and Delete documents in MongoDB collections using the
-    MongoDB shell.
+  MongoDB shell.
 
 ## Preparation
 
