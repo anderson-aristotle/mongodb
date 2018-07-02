@@ -43,8 +43,6 @@ What does this mean?
 | row                          | document         |
 | column                       | field            |
 
----
-
 ## Create a Database
 
 ### Code Along
@@ -58,15 +56,15 @@ First let's fire up our server:
 
 - Mac OS only:
 
-  ```bash
-  brew services start mongodb
-  ```
+```bash
+brew services start mongodb
+```
 
 - Ubuntu Only:
 
-  ```bash
-  sudo service mongod start
-  ```
+```bash
+sudo service mongod start
+```
 
 The command to enter into the MongoDB shell is `mongo <name-of-database>`:
 
@@ -114,8 +112,6 @@ local  0.000GB # or local  0.078GB
 >
 ```
 
----
-
 ## Importing Data
 
 - [Importing data](https://docs.mongodb.org/getting-started/shell/import-data/)
@@ -161,7 +157,9 @@ If we want to clear the collection before the import, we pass the `--drop` flag.
 
 Run this script by typing:
 
- ```sh path_to_file.sh```
+ ```
+ sh path_to_file.sh
+ ```
 
 Now that we've inserted data into it, the `mongo-crud` database and the `people`
 collection both exist.
@@ -184,8 +182,6 @@ people
 On your own, use `mongoimport` to bulk load from `data/doctors.csv` and
 `data/ingredients.csv`. Save the commands as `.sh` files and run them from the
 terminal (not the Mongo shell!).
-
----
 
 ## Retrieving Documents from a Collection
 
@@ -226,10 +222,12 @@ Let's see some of what we can learn about the books in the database.
  "published_on" : "2002-10-20"
 }
 ```
+
 ```
 > db.books.find({published_on: /20/}).count()
 36
 ```
+
 ```
 > db.books.find({published_on: /20/}).sort({title: -1}).limit(2).pretty()
 {
@@ -263,8 +261,6 @@ can find all people born after a date. How about the number of people under
 
 Write a query to get all the ingredients with a unit of `tbsp`.
 
----
-
 ## Deleting Documents
 
 - [Removing Data](https://docs.mongodb.org/getting-started/shell/remove/)
@@ -288,6 +284,7 @@ one entry and multiple entries.
 > db.books.deleteOne({author: "John Irving"})
 { "acknowledged" : true, "deletedCount" : 1 }
 ```
+
 ```
 > db.books.deleteMany({author: "Sinclair Lewis"})
 { "acknowledged" : true, "deletedCount" : 2 }
@@ -301,8 +298,6 @@ Let's remove all the people with a specific `born_on` date and doctors with
 ### Lab: Delete Ingredients
 
 Remove ingredients that have `ml` as their unit of measure.
-
----
 
 ## Changing the Data in Documents in a Collection
 
@@ -322,6 +317,7 @@ some books and give them a correct `published_on` value.
 > db.books.update({title: 1984}, {$set: {published_on: "1949-06-08"}})
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 ```
+
 ```bash
 > db.books.update({title: "Slaughterhouse-Five"}, {$set: {published_on: "1969-03-31", book_cover: "brown", pages: 247} })
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
@@ -337,8 +333,6 @@ specialties.
 ### Lab: Update Ingredients
 
 Update a couple of ingredients' units.
-
----
 
 ## Adding a Document to a Collection
 
