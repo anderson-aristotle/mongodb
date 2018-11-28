@@ -157,7 +157,7 @@ If we want to clear the collection before the import, we pass the `--drop` flag.
 
 Run this script by typing:
 
- ```
+ ```bash
  sh path_to_file.sh
  ```
 
@@ -207,7 +207,7 @@ specify the JSON as a JavaScript object.
 
 Let's see some of what we can learn about the books in the database.
 
-```
+```bash
 > db.books.find({author: "Ernest Hemingway"}).pretty()
 {
  "_id" : ObjectId("583ee3f3e6ae0faa5547068e"),
@@ -223,12 +223,12 @@ Let's see some of what we can learn about the books in the database.
 }
 ```
 
-```
+```bash
 > db.books.find({published_on: /20/}).count()
 36
 ```
 
-```
+```bash
 > db.books.find({published_on: /20/}).sort({title: -1}).limit(2).pretty()
 {
  "_id" : ObjectId("583ee3f3e6ae0faa5547072f"),
@@ -280,12 +280,12 @@ and `db.dropDatabase();` drops the current database.
 We'll remove a few books from the data-store. There are methods for removing
 one entry and multiple entries.
 
-```
+```bash
 > db.books.deleteOne({author: "John Irving"})
 { "acknowledged" : true, "deletedCount" : 1 }
 ```
 
-```
+```bash
 > db.books.deleteMany({author: "Sinclair Lewis"})
 { "acknowledged" : true, "deletedCount" : 2 }
 ```
