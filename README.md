@@ -66,6 +66,12 @@ brew services start mongodb
 sudo service mongod start
 ```
 
+- WSL Only:
+
+```bash
+sudo service mongodb start
+```
+
 The command to enter into the MongoDB shell is `mongo <name-of-database>`:
 
 ```bash
