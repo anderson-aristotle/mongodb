@@ -195,6 +195,7 @@ terminal (not the Mongo shell!).
   - Overview of retrieving data from MongoDB.
 - [Queries](https://docs.mongodb.org/manual/reference/mongo-shell/#queries)
   - More detailed overview on retrieving data.
+- [Query Operators](https://docs.mongodb.com/manual/reference/operator/query/)
 - [`find`](https://docs.mongodb.org/manual/reference/method/db.collection.find/)
   - Detailed documentation on the `find` collection method.
 - [`findOne`](https://docs.mongodb.org/manual/reference/method/db.collection.findOne/)
