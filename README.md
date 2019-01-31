@@ -120,13 +120,8 @@ local  0.000GB # or local  0.078GB
 
 ## Importing Data
 
-- [Importing data](https://docs.mongodb.org/getting-started/shell/import-data/)
-  - Overview of MongoDB's `mongoimport` command line utility.
-- [`mongoimport`](https://docs.mongodb.org/manual/reference/program/mongoimport/)
-  - Detailed documentation of MongoDB's `mongoimport` command line utility.
-
 To help us practice interacting with a Mongo database, we'll want some data to
-work with. MongoDB's `mongoimport` command will let us load bulk data from a
+work with. MongoDB's [`mongoimport`](https://docs.mongodb.org/manual/reference/program/mongoimport/) command will let us load bulk data from a
 `JSON` or `CSV` file.
 
 Our first collection will be called `people`. It has no entries.
